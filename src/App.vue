@@ -278,7 +278,7 @@ async function initScene() {
     // 3. 環境貼圖載入與光源設置
     try {
         await new Promise((resolve, reject) => {
-            new EXRLoader().setPath('../public/textures/').load('kloofendal_48d_partly_cloudy_puresky_4k.exr', function (texture) {
+            new EXRLoader().setPath('../public/textures/').load('puresky.exr', function (texture) {
                 texture.mapping = THREE.EquirectangularReflectionMapping;
                 scene.environment = texture;
 
@@ -304,7 +304,7 @@ async function initScene() {
     }
 
     // 4. 載入 3D 模型
-    const modelPaths = { psp: '../public/models/sony_psp2.glb' };
+    const modelPaths = { psp: '../public/models/psp.glb' };
 
     try {
         const [pspScene] = await Promise.all([loadSingleModel(modelPaths.psp)]);
