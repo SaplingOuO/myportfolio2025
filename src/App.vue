@@ -404,11 +404,8 @@ onMounted(() => {
     // ----------------------------------------------------
     // 【新增偵測】在 mounted 後立刻檢查路徑
     // ----------------------------------------------------
-    checkResourcePath('/models/sony_psp2.glb'); 
-    checkResourcePath('/textures/kloofendal_48d_partly_cloudy_puresky_4k.exr');
-
-    // 偵測另一個懷疑有問題的資源
-    checkResourcePath('/img/close-md-svgrepo-com.svg');
+    checkResourcePath('/models/psp.glb'); 
+    checkResourcePath('/textures/puresk.exr');
     // ----------------------------------------------------
 
     // 設置事件監聽器
