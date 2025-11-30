@@ -278,7 +278,7 @@ async function initScene() {
     // 3. 環境貼圖載入與光源設置
     try {
         await new Promise((resolve, reject) => {
-            new EXRLoader().setPath('/textures/').load('puresky.exr', function (texture) {
+            new EXRLoader().setPath('../textures/').load('puresky.exr', function (texture) {
                 texture.mapping = THREE.EquirectangularReflectionMapping;
                 scene.environment = texture;
 
@@ -304,7 +304,7 @@ async function initScene() {
     }
 
     // 4. 載入 3D 模型
-    const modelPaths = { psp: '/models/psp.glb' };
+    const modelPaths = { psp: '../models/psp.glb' };
 
     try {
         const [pspScene] = await Promise.all([loadSingleModel(modelPaths.psp)]);
@@ -372,27 +372,6 @@ function onResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-async function checkResourcePath(path) {
-    console.log(`正在檢查路徑: ${path}`);
-    try {
-        const response = await fetch(path, { method: 'HEAD' }); // 使用 HEAD 方法比 GET 更快，只需獲取標頭
-
-        if (response.ok) {
-            // response.ok 是 true 表示狀態碼在 200-299 之間
-            console.log(`✅ 路徑偵測成功！資源可存取: ${path}`);
-            return true;
-        } else {
-            // 狀態碼是 404, 500, 或其他錯誤
-            console.error(`❌ 路徑錯誤！無法載入資源。狀態碼: ${response.status} (${response.statusText})，路徑: ${path}`);
-            return false;
-        }
-    } catch (error) {
-        // 捕獲網路錯誤 (例如 CORS 限制、網路斷線)
-        console.error(`🚨 網路或 CORS 錯誤，無法連線。路徑: ${path}`, error);
-        return false;
-    }
-}
-
 // ===============================================
 // 6. VUE 生命週期鉤子
 // ===============================================
@@ -400,13 +379,6 @@ async function checkResourcePath(path) {
 onMounted(() => {
     initScene();
     animate();
-
-    // ----------------------------------------------------
-    // 【新增偵測】在 mounted 後立刻檢查路徑
-    // ----------------------------------------------------
-    checkResourcePath('/models/psp.glb'); 
-    checkResourcePath('/textures/puresk.exr');
-    // ----------------------------------------------------
 
     // 設置事件監聽器
     window.addEventListener("resize", onResize);
