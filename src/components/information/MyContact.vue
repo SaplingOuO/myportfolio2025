@@ -35,7 +35,7 @@ import { Toast } from 'bootstrap';
 export default{
     data(){
         return{
-            myGamil: 'saplingwork@gmail.com',
+            myGamil: 'SaplingWork@gmail.com',
             myGithub: 'https://github.com/SaplingOuO',
             // 用於顯示 Toast 內容的變數
             toastMessage: '' 
