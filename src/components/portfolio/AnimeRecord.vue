@@ -5,7 +5,7 @@
       <div class="col-10 mx-auto">
         <!-- 搜尋與篩選區域 -->
         <div
-          class="d-flex justify-content-around flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          class="d-flex justify-content-around flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 border-bottom">
           <!-- 請確保路徑是正確的 -->
           <img class="h2 col-3" src="../../../public/animeImages/logo.png" alt="Logo" />
           <div class="row col-9">
@@ -13,7 +13,7 @@
             <div id="years" class="col dropdown p-1">
               <select class="form-select" v-model="searchYear">
                 <option value="" selected>所有年份</option>
-                <option v-for="yearOption in yearOptions" :key="yearOption" :value="yearOption">
+                <option v-for="yearOption in yearOptions" :key="yearOption" :value="yearOption" style="height: 100px;">
                   {{ yearOption }}
                 </option>
               </select>
@@ -50,11 +50,11 @@
           <!-- 使用 transition 進行列表和詳細視圖的平滑切換 -->
           <transition name="list-fade" mode="out-in">
             <!-- 1. 卡片列表視圖 (List View) -->
-            <div v-if="!isModalVisible" class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-0" key="listView">
-              <div v-for="card in filteredCards" :key="card.id" class="col-6 col-md-4 col-xl-3 column">
-                <div class="col position-relative card" :tag="card.tag">
+            <div v-if="!isModalVisible" class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-0 pt-3" key="listView">
+              <div v-for="card in filteredCards" :key="card.id" class="col-6 col-md-4 col-xl-3 p-1 column">
+                <div class="col position-relative card-item" :tag="card.tag">
                   <div class="img-fluid" style="height: 300px">
-                    <img class="card-img-top mx-auto d-block" :src="card.imageSrc" :alt="card.title"
+                    <img class="card-img-top mx-auto d-block rounded" :src="card.imageSrc" :alt="card.title"
                       style="object-fit: cover; width: 100%; height: 100%" />
                   </div>
                   <div class="position-absolute bottom-0 start-0 w-100 badge bg-dark" style="--bs-bg-opacity: 0.7">
@@ -439,14 +439,13 @@ export default {
 /* ---------------------------------- */
 /* 卡片樣式 */
 /* ---------------------------------- */
-.card {
+.card-item {
+  border-radius: 0.375rem; 
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  margin: 5px;
-  padding: 1px;
 }
 
-.card:hover {
+.card-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

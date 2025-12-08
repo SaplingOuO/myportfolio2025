@@ -48,6 +48,7 @@ import MyIntroduce from "./components/information/MyIntroduce.vue";
 import MyContact from "./components/information/MyContact.vue";
 
 import AnimeRecord from "./components/portfolio/AnimeRecord.vue";
+import PMTypeMatchups from "./components/portfolio/PMTypeMatchups.vue"
 
 import BackGround from "./components/setting/BackGround.vue";
 
@@ -82,6 +83,7 @@ const pageComponents = {
     MyContact,
     BackGround,
     AnimeRecord,
+    PMTypeMatchups,
 };
 const currentComponent = computed(() => {
     // 獲取當前選中的項目
@@ -108,6 +110,7 @@ const menuData = {
         label: '作品集',
         items: [
             { label: '動漫搜尋', pageName: 'AnimeRecord', action: 'show_web' },
+            { label: '寶可夢屬性相剋', pageName: 'PMTypeMatchups', action: 'show_web' },
         ]
     },
     'game': {
