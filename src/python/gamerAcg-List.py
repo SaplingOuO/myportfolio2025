@@ -13,7 +13,7 @@ from datetime import datetime
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))#定下工作目錄位置
 animeImages = "../../public/animeImages/"
-oldData = "../assets/MyProject/gamerAcg-List.json"
+oldData = "../assets/gamerAcg-List.json"
 
 headers = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
@@ -27,8 +27,8 @@ wb = Workbook()
 title = ['中文','日文','英文','圖片','編號','上映日期','季']
 allData = []
 
-i = 1 #起始頁面
-o = 30 #496 #結束頁面
+i = 2 #起始頁面
+o = 10 #496 #結束頁面
 index = 0
 
 while (i<=o):#頁數

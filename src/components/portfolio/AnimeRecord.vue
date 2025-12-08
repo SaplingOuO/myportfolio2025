@@ -50,8 +50,8 @@
           <!-- 使用 transition 進行列表和詳細視圖的平滑切換 -->
           <transition name="list-fade" mode="out-in">
             <!-- 1. 卡片列表視圖 (List View) -->
-            <div v-if="!isModalVisible" class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-0 pt-3" key="listView">
-              <div v-for="card in filteredCards" :key="card.id" class="col-6 col-md-4 col-xl-3 p-1 column">
+            <div v-if="!isModalVisible" class="w-100 row row-cols-2 row-cols-md-3 row-cols-xl-4 g-0 pt-3" key="listView">
+              <div v-for="card in filteredCards" :key="card.id" class="col-6 col-md-4 col-xl-4 p-1 column">
                 <div class="col position-relative card-item" :tag="card.tag">
                   <div class="img-fluid" style="height: 300px">
                     <img class="card-img-top mx-auto d-block rounded" :src="card.imageSrc" :alt="card.title"
