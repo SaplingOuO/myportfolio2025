@@ -13,7 +13,7 @@
             <div id="years" class="col dropdown p-1">
               <select class="form-select" v-model="searchYear">
                 <option value="" selected>所有年份</option>
-                <option v-for="yearOption in yearOptions" :key="yearOption" :value="yearOption" style="height: 100px;">
+                <option v-for="yearOption in yearOptions" :key="yearOption" :value="yearOption">
                   {{ yearOption }}
                 </option>
               </select>

@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed, provide } from "vue";
+import { ref, onMounted, onUnmounted, computed} from "vue";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
@@ -43,13 +43,15 @@ import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
 import { useHomeSetting } from './stores/homeSetting';
 
 import WarnPage from "./components/WarnPage.vue";
-
+// 關於我
 import MyIntroduce from "./components/information/MyIntroduce.vue";
 import MyContact from "./components/information/MyContact.vue";
-
+// 小遊戲
+import EatBeans from "./components/minigame/EatBeans.vue";
+// 專案
 import AnimeRecord from "./components/portfolio/AnimeRecord.vue";
 import PMTypeMatchups from "./components/portfolio/PMTypeMatchups.vue"
-
+// 設定
 import BackGround from "./components/setting/BackGround.vue";
 
 // ===============================================
@@ -84,6 +86,7 @@ const pageComponents = {
     BackGround,
     AnimeRecord,
     PMTypeMatchups,
+    EatBeans
 };
 const currentComponent = computed(() => {
     // 獲取當前選中的項目
@@ -116,6 +119,7 @@ const menuData = {
     'game': {
         label: '遊戲',
         items: [
+            { label: '吃豆子', pageName: 'EatBeans', action: 'start_game' },
             { label: '建設中', pageName: 'WarnPage', action: 'start_game' },
         ]
     },
@@ -459,9 +463,10 @@ onUnmounted(() => {
     font-weight: 300;
     padding: 0 15px;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.8;
     /* 未選中時半透明 */
     transition: all 0.3s ease-out;
+    text-shadow: 0 0 10px rgb(255, 255, 255, 0.6);
 }
 
 .is-primary-selected {
@@ -499,6 +504,7 @@ onUnmounted(() => {
     transition: all 0.2s ease-out;
     opacity: 0.6;
     /* 未選中時半透明 */
+    text-shadow: 0 0 10px rgb(255, 255, 255, 0.6);
 }
 
 .is-selected {

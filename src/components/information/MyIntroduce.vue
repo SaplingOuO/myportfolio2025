@@ -34,10 +34,6 @@ export default {
         
         // 3. 啟動 Emoji 動畫
         this.emojiAnimete();
-        
-        // 移除 window.addEventListener("resize", this.setup);
-        // 如果文字動畫只執行一次，通常不需要在 resize 時重跑 setup。
-        // 但如果希望 SplitText 能適應螢幕變化，可以保留。
     },
 
     beforeUnmount() {
@@ -126,7 +122,6 @@ export default {
             });
         }
         
-        // 移除 animateChars, animateWords, animateLines 方法
     }
 };
 </script>
