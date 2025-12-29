@@ -1,7 +1,7 @@
 <template>
     <div class="row g-0 overflow-hidden">
         <div class="col col-sm">
-            <div class="h1 text-center">遇到的寶可夢屬性</div>
+            <div class="h1 text-center text-light">遇到的寶可夢屬性</div>
             <button class="col-6 fs-2" v-for="(selectedType, index) in selectedTypes"
                 :key="index" @click="deleteType(index)"
                 v-show="types[selectedType.type] != null"
@@ -9,11 +9,15 @@
                 {{ types[selectedType.type] ? types[selectedType.type].typeCH : null }}
             </button>
             <div class="row g-0 justify-content-center">
-                <button class="typeImg col-3 border-0 rounded-pill m-1 p-1 fw-bold text-light" :style=" {'background-color':types[index].typeColor ,'background-image':'url('+types[index].typeImg+')'}" v-for="(type, index) in types" :key="type" @click="updateType(index)">{{ type.typeCH }}</button>
+                <button class="typeImg col-3 border-0 rounded-pill m-1 p-1 fw-bold text-light" 
+                    :style=" {'background-color':types[index].typeColor ,'background-image':'url('+types[index].typeImg+')'}" v-for="(type, index) in types" 
+                    :key="type" @click="updateType(index)">
+                    {{ type.typeCH }}
+                </button>
             </div>
         </div>
 
-        <div class="col col-sm text-center">
+        <div class="col col-sm text-center text-light">
             <div class="row">
                 <div class="col-5">
                     <div class="fs-2">效果絕佳</div>

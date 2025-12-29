@@ -7,7 +7,7 @@
         <div
           class="d-flex justify-content-around flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 border-bottom">
           <!-- 請確保路徑是正確的 -->
-          <img class="h2 col-3" src="../../../public/animeImages/logo.png" alt="Logo" />
+          <img class="h2 col-3" src="../../../animeImages/logo.png" alt="Logo" />
           <div class="row col-9">
             <input type="text" class="col-8 col-xl-8 rounded-pill p-2" placeholder="請輸入關鍵字" v-model="searchInput">
             <div id="years" class="col dropdown p-1">
@@ -227,7 +227,7 @@ export default {
   },
 
   methods: {
-    // 顯示狀態訊息 (取代 alert/confirm)
+    // 顯示狀態訊息 
     showStatus(message, type = 'success') {
       if (this.statusTimer) {
         clearTimeout(this.statusTimer);
