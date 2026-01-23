@@ -51,6 +51,7 @@ import EatBeans from "./components/minigame/EatBeans.vue";
 // 專案
 import AnimeRecord from "./components/portfolio/AnimeRecord.vue";
 import PMTypeMatchups from "./components/portfolio/PMTypeMatchups.vue"
+import SearchAnime from "./components/portfolio/SearchAnime/FrontPage.vue"
 // 設定
 import BackGround from "./components/setting/BackGround.vue";
 
@@ -70,7 +71,7 @@ let isTurning = ref(false);     // 是否正在執行平滑的旋轉/縮放動
 const targetRotation = 0;       // 模型轉正時的目標 Y 軸角度
 const LERP_FACTOR = 0.05;       // 線性插值因子 (Lerp)，控制轉向速度
 const MIN_SCALE = 1;            // 模型預設/最小縮放值
-const MAX_SCALE = 1.5;          // 選單顯示時的放大目標縮放值
+const MAX_SCALE = 1.5          // 選單顯示時的放大目標縮放值
 let targetScale = MIN_SCALE;    // 當前的目標縮放值
 
 // ===============================================
@@ -86,6 +87,7 @@ const pageComponents = {
     BackGround,
     AnimeRecord,
     PMTypeMatchups,
+    SearchAnime,
     EatBeans
 };
 const currentComponent = computed(() => {
@@ -114,6 +116,7 @@ const menuData = {
         items: [
             { label: '動漫搜尋', pageName: 'AnimeRecord', action: 'show_web' },
             { label: '寶可夢屬性相剋', pageName: 'PMTypeMatchups', action: 'show_web' },
+            { label: '動漫搜尋', pageName: 'SearchAnime', action: 'show_web' },
         ]
     },
     'game': {
@@ -142,7 +145,7 @@ const isMenuVisible = computed(() => {
 const HomeSetting = useHomeSetting(); // 👈 初始化 Store 實例
 // 計算屬性：設定 XMB 容器的尺寸 (模擬 PSP 螢幕比例)
 const menuStyle = computed(() => {
-    const targetWidth = 740;
+    const targetWidth = 740; //740
     const targetHeight = targetWidth / 16 * 9;
 
     return {

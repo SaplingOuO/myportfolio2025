@@ -183,7 +183,7 @@ export default {
           return false;
         }
 
-        // 2. 季度篩選 (精確匹配)
+        // 2. 季度篩選
         if (season && card.season !== season) {
           return false;
         }

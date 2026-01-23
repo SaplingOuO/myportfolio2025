@@ -15,7 +15,10 @@
 
 🟡 2024 - 工具轉型與跨域整合
 - 實作專案： [MyPortfolio](https://saplingouo.github.io/MyPortfolio/Home)
-	- [動漫搜尋系統](https://saplingouo.github.io/AnimeRecord/)：結合 Vue 與 Python，實作異步資料處理與複雜搜尋邏輯。
+	- [動漫搜尋系統](https://saplingouo.github.io/AnimeRecord/)
+		- 架構： 使用 Vue 3 (Options API) 構建，前端透過 Axios 串接由 Python 預處理的動態 JSON 資料庫。
+		- 核心功能： 實作複雜的多維度篩選邏輯（包含關鍵字搜尋、季度過濾、播放狀態分類）與自定義排序演算法。
+		- 技術挑戰： 處理非同步資料載入（Async/Await），並在資料回傳後進行前端清洗與格式化，確保使用者介面（UI）與數據狀態高度同步。
 - 技術升級： 捨棄傳統編輯器，全面改用 Visual Studio Code。
 	- 導入 Git / Sourcetree 進行版本控制。
 - 技術探索： 學習 Python 處理資料邏輯，並接觸 Three.js、Carousel-3D 等視覺庫。
