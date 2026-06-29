@@ -77,7 +77,7 @@ const handleLogout = async () => {
 // 搜尋動畫邏輯
 const moveSearchContainer = (toTop) => {
     isActive.value = toTop;
-    gsap.to(".search-section", {
+    gsap.to(".search-section", { 
         top: toTop ? "-5.5%" : "50%",
         duration: 0.8,
         ease: "power3.inOut"
